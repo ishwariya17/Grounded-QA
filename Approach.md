@@ -1,10 +1,10 @@
-Grounded QA API – Approach Document
+# Grounded QA API – Approach Document
 
-1. Chunking Strategy
+# 1. Chunking Strategy
 
 The system ingests the three SOP documents provided in the data/ directory. Each document is divided into chunks by splitting on the numbered sections (1., 2., 3., …), since every numbered section represents a self-contained piece of information. During ingestion, each chunk is stored along with its associated metadata, including the document ID, chunk number, and chunk content. This approach keeps the chunking process simple while ensuring that retrieved information remains meaningful and easy to reference.
 
-2. Data Model
+# 2. Data Model
 
 The project uses SQLite with SQLAlchemy for structured data storage.
 
@@ -50,13 +50,13 @@ Citation Chunk IDs
 
 This separation keeps structured document data in SQL while allowing flexible storage of conversation history.
 
-3. Prompt Design for Enforcing Grounding
+# 3. Prompt Design for Enforcing Grounding
 
 To ensure grounded responses, only the selected chunks are included in the prompt sent to the LLM.
 
 Each chunk is labelled with its chunk ID before being passed to Gemini.
 
-# Example prompt structure:
+## Example prompt structure:
 
 Context:
 
@@ -79,7 +79,7 @@ Return only the final answer.
 
 This prompt design minimizes hallucinations and ensures every answer is grounded in the selected SOP content.
 
-4. Trade-offs and Future Improvements
+# 4. Trade-offs and Future Improvements
 
 ## Current Trade-offs
 
