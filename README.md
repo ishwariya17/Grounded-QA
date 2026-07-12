@@ -28,7 +28,7 @@ Grounded QA API is a backend service built using **FastAPI** that ingests Standa
 - python-dotenv
 
 # Project Structure
-
+```text
 Grounded-QA/
 │
 ├── app/
@@ -53,6 +53,7 @@ Grounded-QA/
 ├── requirements.txt
 ├── README.md
 └── approach.md
+```
 
 # Installation
 
